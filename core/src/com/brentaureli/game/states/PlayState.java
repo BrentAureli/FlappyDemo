@@ -1,8 +1,6 @@
 package com.brentaureli.game.states;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
@@ -10,8 +8,6 @@ import com.badlogic.gdx.utils.Array;
 import com.brentaureli.game.FlappyDemo;
 import com.brentaureli.game.sprites.Bird;
 import com.brentaureli.game.sprites.Tube;
-
-import java.util.Iterator;
 
 /**
  * Created by Brent on 7/5/2015.
@@ -67,11 +63,11 @@ public class PlayState extends State {
             }
 
             if(tube.collides(bird.getBounds()))
-                gsm.set(new PlayState(gsm));
+                gsm.set(new MenuState(gsm));
         }
 
         if(bird.getPosition().y <= ground.getHeight() + GROUND_Y_OFFSET)
-            gsm.set(new PlayState(gsm));
+            gsm.set(new MenuState(gsm));
         cam.update();
 
     }
